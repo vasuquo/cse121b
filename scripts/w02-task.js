@@ -30,11 +30,15 @@ const favoriteFood = [
 
 foodElement.innerHTML = favoriteFood;
 
-const singleFood = "Plantain Portage";
+const singleFood = "Plantain Porridge";
 favoriteFood.push(singleFood);
 
 foodElement.innerHTML += `<br>${favoriteFood}`;
 
 favoriteFood.shift();
+
+foodElement.innerHTML += `<br>${favoriteFood}`;
+
+favoriteFood.pop();
 
 foodElement.innerHTML += `<br>${favoriteFood}`;
