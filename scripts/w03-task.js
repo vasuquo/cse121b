@@ -80,7 +80,7 @@ const getTotal = () => {
 
   total = subtotal - discount;
 
-  document.querySelector(".larger").innerHTML = `$${total}`;
+  document.querySelector(".larger").innerHTML = `$${total.toFixed(2)}`;
 };
 
 document.querySelector("#getTotal").addEventListener("click", getTotal);
