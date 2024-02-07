@@ -64,18 +64,19 @@ const filterTemples = (temples) => {
       displayTemples(templeList);
       break;
     case "sort":
-      let sorted = templeList.sort((p1, p2) =>
-        p1.templeName > p2.templeName
-          ? 1
-          : p1.templeName < p2.templeName
-            ? -1
-            : 0,
-      );
-      displayTemples(sorted);
+      sortBy();
       break;
     default:
       break;
   }
+};
+
+/* sortBy function */
+const sortBy = () => {
+  let sorted = templeList.sort((p1, p2) =>
+    p1.templeName > p2.templeName ? 1 : p1.templeName < p2.templeName ? -1 : 0,
+  );
+  displayTemples(sorted);
 };
 
 /* Stretch add option for sorting */
