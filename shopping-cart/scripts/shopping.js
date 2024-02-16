@@ -1,4 +1,4 @@
-// copyright year
+/* Set copyright year information */
 document.querySelector("#year").textContent = new Date().getFullYear();
 
 /* Declare variables for html elements */
@@ -22,7 +22,7 @@ const getProducts = async () => {
   if (response.ok) {
     const productList = await response.json();
 
-    /* Store fecthed products in local storage */
+    /* Store fetched products in local storage */
     localStorage.setItem("data", JSON.stringify(productList));
 
     displayProducts(productList);
@@ -52,9 +52,9 @@ const displayProducts = (products) => {
     productsElement.appendChild(li);
   });
 
-  displayCart();
-
   countProducts(products);
+
+  displayCart();
 };
 
 /* Currency format function to format item price */
@@ -206,7 +206,7 @@ const sortByPrice = (products) => {
   displayProducts(sortedProducts);
 };
 
-/* Display Shooping cart */
+/* Display Shopping cart */
 getProducts();
 const products = JSON.parse(localStorage.getItem("data"));
 
