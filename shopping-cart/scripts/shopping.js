@@ -10,7 +10,9 @@ const sortPrice = document.querySelector("#filter-sort");
 const button = document.querySelector("button");
 
 /* Declare array variable for cart items */
-const cartItems = [];
+const cartItems = localStorage.getItem("cartItems")
+  ? JSON.parse(localStorage.getItem("cartItems"))
+  : [];
 
 /* async getProducts Function to fetch shopping products */
 const getProducts = async () => {
@@ -50,7 +52,7 @@ const displayProducts = (products) => {
     productsElement.appendChild(li);
   });
 
-  document.querySelector("#header").textContent = `Cart is empty`;
+  displayCart();
 
   countProducts(products);
 };
@@ -90,6 +92,8 @@ const addToCart = (product) => {
       count: 1,
     });
   }
+
+  localStorage.setItem("cartItems", JSON.stringify(cartItems));
 
   displayCart();
 };
@@ -147,6 +151,8 @@ const removeFromCart = (id) => {
     }
   }
 
+  localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
   displayCart();
 };
 
@@ -161,7 +167,7 @@ const reset = (num) => {
 };
 
 /* countProducts count and show product counts */
-const filterProducts = (products) => {
+const countProducts = (products) => {
   let productResult = document.querySelector(".filter-result");
   let productCount = products.length;
   productResult.innerHTML = `${productCount} products`;
