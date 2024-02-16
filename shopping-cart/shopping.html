@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="css/shopping.css">
+  </head>
+  <body>
+    <div class="grid-container">
+      <header>
+        <a href="/">Shopping Cart</a>
+      </header>
+      <main>
+        <div class="content">
+          <div class="main">
+            <dir>
+              <div class="filter">
+                <div class="filter-result"></div>
+                <div class="filter-sort">
+                  Order
+                  <select id="filter-sort">
+                    <option value="latest">Latest</option>
+                    <option value="lowest">Lowest</option>
+                    <option value="highest">Highest</option>
+                  </select>
+                </div>
+                <div class="filter-category">
+                  Category
+                  <select id="filter-category">
+                    <option value="ALL">ALL</option>
+                    <option value="men's clothing">Men's clothing</option>
+                    <option value="women's clothing">Women's clothing</option>
+                    <option value="jewelery">Jewelery</option>
+                    <option value="electronics">Electronics</option>
+                  </select>
+                </div>
+              </div>
+              <ul class="products"></ul>
+            </dir>
+          </div>
+          <div class="sidebar">
+            <div id="header" class="cart cart-header"></div>
+            <div class="cart">
+              <ul class="cart-items"></ul>
+              <div class="total"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        &copy;<span id="year"></span> | Project - Shopping Cart | CSE 121b |
+        Victor Asuquo
+      </footer>
+    </div>
+    <script src="scripts/shopping.js"></script>
+    <script>
+      document.getElementById("year").innerHTML = new Date().getFullYear();
+    </script>
+  </body>
+</html>
